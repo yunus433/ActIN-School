@@ -1,0 +1,36 @@
+{
+  "name": "actinschool",
+  "version": "1.0.0",
+  "description": "Okul kulüpleri için yönetim ve destek sayfası",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.7.0"
+  },
+  "author": "Yunus Gürlek",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.2",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.14.0",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "express-sslify": "^1.2.0",
+    "helmet": "^3.21.2",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.5.4",
+    "multer": "^1.4.1",
+    "nodemailer": "^6.2.1",
+    "nodemailer-html-to-text": "^3.0.0",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.2.0",
+    "validator": "^10.11.0"
+  }
+}
