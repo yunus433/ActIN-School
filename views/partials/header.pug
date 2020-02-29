@@ -1,0 +1,20 @@
+extends ./../partials/head
+block content
+  .all-wrapper
+    .all-header
+      .main-logo
+        span Act'IN
+        span School
+      .header-bar
+        a(href="/").header-bar-each 
+          span Hakkımızda
+        a(href="/").header-bar-each 
+          span Yönetim Girişi
+        a(href="/").header-bar-each
+          span Yeni Okul Başvurusu
+      .login-wrapper
+        a.login-button(href="/auth/login") Giriş Yap
+        span ya da
+        a.register-button(href="/auth/register") Üye Ol
+    .all-content
+      block main

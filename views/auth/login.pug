@@ -1,0 +1,11 @@
+extends ./../partials/header
+block main
+  form.all-content-login-wrapper(action="/auth/login" method="POST")
+    span.all-content-header Öğrenci Girişi
+    .form-line
+      i.fas.fa-envelope
+      input.form-input(type="email" autocomplete="off" autofocus required placeholder="E-posta" name="email")
+    .form-line
+      i.fas.fa-key
+      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Şifre" name="password")
+    button.form-send-button Giriş yap

@@ -1,0 +1,22 @@
+extends ./../partials/header
+block main
+  form.all-content-register-wrapper(action="/auth/register" method="POST")
+    span.all-content-header Üye Ol
+    .form-line
+      i.fas.fa-envelope
+      input.form-input(type="email" autocomplete="off" autofocus required placeholder="E-posta" name="email")
+    .form-line
+      i.fas.fa-user
+      input.form-input(type="name" autocomplete="off" autofocus required placeholder="İsim Soyisim" name="name")
+    .form-line
+      i.fas.fa-university
+      input.form-input#school-input(type="school" autocomplete="off" autofocus required placeholder="Okul" name="school")
+    .input-value-wrapper
+      .school-input-values
+        span.input-value-each-span Albert-Ludwigs-Universität Freiburg
+        span.input-value-each-span Bard College Berlin, A Liberal Arts University
+        span.input-value-each-span Bauhaus-Universität Weimar
+    .form-line
+      i.fas.fa-key
+      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Şifre" name="password")
+    button.form-send-button Üye ol
