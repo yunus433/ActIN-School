@@ -11,7 +11,7 @@ html {
   padding: 0px;
   overflow: hidden;
   height: 100%;
-	background: rgb(248, 248, 248);
+	background: rgb(253, 253, 253);
 	background-size: cover;
 }
 body {
@@ -38,8 +38,8 @@ body {
 
 .all-header {
   flex: 1;
-  background-color: rgb(230, 219, 201);
-  box-shadow: 0px 4px 20px rgba(230, 219, 201, 0.9);
+  background-color: white;
+  border-bottom: 2px solid rgb(236, 236, 236);
   display: flex;
   align-items: center;
   padding: 0% 4%;
@@ -51,6 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-decoration: none;
 }
 .main-logo span {
   height: 30px;
@@ -65,12 +66,12 @@ body {
   margin-right: 25px;
   width: auto;
   text-decoration: none;
-  color: rgb(140, 188, 208);
-  font-size: 125%;
-  font-weight: 700;
+  color: rgb(64, 64, 64);
+  font-size: 140%;
+  font-weight: 500;
 }
 .header-bar-each:hover {
-  color: rgb(222, 166, 175);
+  text-decoration: underline;
 }
 
 .login-wrapper {

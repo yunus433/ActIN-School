@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment-timezone');
 
 const Schema = mongoose.Schema;
 
@@ -26,6 +27,10 @@ const UserSchema = new Schema({
     type: String, 
     required: true
   },
+  schoolNumber: {
+    type: Number,
+    required: true
+  },
   verified: {
     type: Boolean,
     default: false
@@ -33,6 +38,10 @@ const UserSchema = new Schema({
   profilePhoto: {
     type: String,
     default: "https://res.cloudinary.com/dvnac86j8/image/upload/v1566558525/actinschool/defaultUserPicture.png"
+  },
+  createdAt: {
+    type: String,
+    default: moment(Date.now()).tz("Europe/Istanbul").format("dddd, MMMM Do YYYY")
   },
   emailPermission: {
     type: Boolean,

@@ -1,7 +1,10 @@
 const validator = require('validator');
+const mongoose = require('mongoose');
 
 const User = require('../../../models/user/User');
-// const sendMail = require('../../../utils/sendMail');
+const School = require('../../../models/school/School');
+
+const sendMail = require('../../../utils/sendMail');
 
 module.exports = (req, res, next) => {
   if (validator.isEmail(req.body.email)) {
@@ -9,6 +12,7 @@ module.exports = (req, res, next) => {
       email: req.body.email,
       name: req.body.name,
       school: req.body.school,
+      schoolNumber: req.body.schoolNumber,
       password: req.body.password
     };
 
@@ -21,15 +25,26 @@ module.exports = (req, res, next) => {
       }
       if (err) return res.redirect('/');
 
-      // sendMail({
-      //   email: user.email,
-      //   userId: user._id 
-      // }, 'userRegister', () => {
-      //   req.session.notVerifiedUser = user;
+      School.findByIdAndUpdate(mongoose.Types.ObjectId(req.body.school), {$push: {
+        "applications": {
+          _id: user._id,
+          email: req.body.email,
+          name: req.body.name,
+          schoolNumber: req.body.schoolNumber,
+          createdAt: user.createdAt
+        }
+      }}, {}, (err, school) => {
+        if (err) return res.redirect('/');
 
-      //   return res.redirect('/auth/verify');
-      // });
-      return res.redirect('/auth/login');
+        sendMail({
+          email: user.email,
+          name: user.name 
+        }, 'userRegister', () => {
+          req.session.user = user;
+  
+          return res.redirect('/auth/verify');
+        });
+      });
     });
   } else {
     req.session.error = 'not valid email';

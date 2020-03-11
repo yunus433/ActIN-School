@@ -1,0 +1,18 @@
+.all-content-main-wrapper {
+  padding-left: 4%;
+  padding-top: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-content-header {
+  font-size: 200%;
+  font-weight: 600;
+  color: rgb(64, 64, 64);
+  margin-bottom: 1%;
+}
+.all-content-text {
+  font-size: 125%;
+  font-weight: 400;
+  color: rgb(64, 64, 64);
+}

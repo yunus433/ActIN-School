@@ -1,0 +1,13 @@
+extends ./../partials/adminHeader
+block main
+  .schools-wrapper
+    each school in schools
+      .each-school
+        span.each-school-item Okul İsmi: #{school.name}
+        span.each-school-item Okul E-postası: #{school.email}
+        span.each-school-item Okul Telefonu: #{school.phone}
+        .each-school-buttons-wrapper
+          form.deny-button-wrapper(action=`/admin/applications?id=${school._id}&response=denied` method="POST")
+            button.deny-button Reddet
+          form.accept-button-wrapper(action=`/admin/applications?id=${school._id}&response=accepted` method="POST")
+            button.accept-button Onayla

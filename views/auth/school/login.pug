@@ -1,0 +1,11 @@
+extends ./../../partials/header
+block main
+  form.all-content-login-wrapper(action="/auth/school/login" method="POST")
+    span.all-content-header Okul Girişi
+    .form-line
+      i.fas.fa-envelope
+      input.form-input(type="text" autocomplete="off" autofocus required placeholder="Admin Kullanıcı Adı" name="adminName")
+    .form-line
+      i.fas.fa-key
+      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Admin Şifresi" name="password")
+    button.form-send-button Giriş yap

@@ -1,5 +1,6 @@
 extends ./../partials/header
 block main
+  span.display-none#school-object= JSON.stringify(schools)
   form.all-content-register-wrapper(action="/auth/register" method="POST")
     span.all-content-header Üye Ol
     .form-line
@@ -10,12 +11,15 @@ block main
       input.form-input(type="name" autocomplete="off" autofocus required placeholder="İsim Soyisim" name="name")
     .form-line
       i.fas.fa-university
-      input.form-input#school-input(type="school" autocomplete="off" autofocus required placeholder="Okul" name="school")
+      input.form-input#school-input(type="text" autocomplete="off" autofocus required placeholder="Okul")
+      input.display-none#school-input-id(type="text" name="school")
     .input-value-wrapper
       .school-input-values
-        span.input-value-each-span Albert-Ludwigs-Universität Freiburg
-        span.input-value-each-span Bard College Berlin, A Liberal Arts University
-        span.input-value-each-span Bauhaus-Universität Weimar
+        each school in schools
+          span.input-value-each-span(id=school._id)= school.name
+    .form-line
+      i.fas.fa-hashtag
+      input.form-input(type="number" name="schoolNumber" autocomplete="off" autofocus required placeholder="Okul Numarası")
     .form-line
       i.fas.fa-key
       input.form-input(type="password" autocomplete="off" autofocus required placeholder="Şifre" name="password")

@@ -1,0 +1,44 @@
+extends ./../partials/head
+block content
+  if includes.external.indexOf('school') > -1
+    .all-wrapper
+      .all-header
+        a.main-logo(href="/")
+          span Act'IN
+          span School
+        .header-bar
+          .header-bar-title
+            span Yönetim
+          a(href="/school/dashboard").header-bar-each
+            i.fas.fa-home
+            span Okul Sayfası
+          a(href="/school/dashboard").header-bar-each
+            i.fas.fa-cog
+            span Ayarlar
+          .header-bar-title
+            span Kayıt
+          a(href="/school/students").header-bar-each
+            i.fas.fa-user
+            span Öğrenci Listesi
+          a(href="/school/applications").header-bar-each
+            i.fas.fa-inbox
+            span Başvurular
+        .copyright-wrapper
+          span Copyright 2020 - Yunus Gürlek 
+      .all-content
+        block main
+  else
+    .all-wrapper
+      .all-header
+        a.main-logo(href="/")
+          span Act'IN
+          span School
+        .header-bar
+          a(href="/schools/dashboard").header-bar-each.dashboard-bar
+            span Okul Sayfası
+          a(href="/schools/users").header-bar-each
+            span Öğrenciler
+          a(href="/schools/applications").header-bar-each.applications-bar
+            span Başvurular
+      .all-content
+        block main

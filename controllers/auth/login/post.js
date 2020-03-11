@@ -7,7 +7,15 @@ module.exports = (req, res, next) => {
       return res.redirect('/auth/login');
     }
 
-    req.session.user = user;
-    return res.redirect('/discover');
+    if (user.verified) {
+      req.session.user = user;
+      if (req.session.redirect)
+        return res.redirect(req.session.redirect);
+      else 
+        return res.redirect('/dashboard');
+    } else {
+      req.session.user = user;
+      return res.redirect('/auth/verify');
+    }
   });
 }

@@ -1,0 +1,13 @@
+extends ./../partials/consoleHeader
+block main
+  .all-content-inner
+    .all-content-header
+      .all-content-header-left
+        .school-logo-wrapper
+          img(src=school.profilePhoto)
+      .all-content-header-right
+        span.school-name= school.name
+        span.school-info Kayıtlı Öğrenci Sayısı: #{school.users.length}
+        span.school-info Üyelik Tarihi: #{school.createdAt}
+    .clubs-wrapper
+      

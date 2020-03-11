@@ -1,0 +1,8 @@
+.all-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+  font-weight: 600;
+}

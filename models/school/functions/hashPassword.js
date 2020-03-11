@@ -1,12 +1,12 @@
 const bcrypt = require("bcrypt");
 
 module.exports = function(next) {
-  let user = this;
+  let school = this;
 
-  if (user.isModified("password")) {
+  if (school.isModified("adminPassword")) {
     bcrypt.genSalt(10, (err, salt) => {
-      bcrypt.hash(user.password, salt, (err, hash) => {
-        user.password = hash;
+      bcrypt.hash(school.adminPassword, salt, (err, hash) => {
+        school.adminPassword = hash;
         next();
       });
     });

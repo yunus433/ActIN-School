@@ -1,0 +1,33 @@
+extends ./../../partials/header
+block main
+  .all-content-info-wrapper
+    span.all-content-header Nasıl Başvurulur?
+    .each-step-wrapper
+      span.step-number 1. 
+      span.step-info Yandaki formu doldurarak Act'IN School'u kurumunuzda kullanmaya başlamak için başvuruda bulunun.
+    .each-step-wrapper
+      span.step-number 2. 
+      span.step-info Başvurunuz alındıktan sonraki iki iş günü içerisinde formunuz değerlendirilecek ve hesabınız aktif hale getirilecek.
+    .each-step-wrapper
+      span.step-number 3. 
+      span.step-info Artık Act'IN School'u kullanmaya başlayabilirsiniz! Size sunduğumuz imkanların tamamını öğrenmek için
+        a.step-link Nasıl Çalışır?
+        span linkini inceleyebilirsiniz.
+  form.all-content-register-wrapper(action="/auth/school/register" method="POST")
+    span.all-content-header Yeni Okul Başvurusu
+    .form-line
+      i.fas.fa-university
+      input.form-input(type="text" autocomplete="off" autofocus required placeholder="Okul Adı" name="name")
+    .form-line
+      i.fas.fa-envelope
+      input.form-input(type="email" autocomplete="off" autofocus required placeholder="Okul Yönetim E-posta'sı" name="email")
+    .form-line
+      i.fas.fa-phone
+      input.form-input(type="text" autocomplete="off" autofocus required placeholder="Okul Telefonu" name="phone")
+    .form-line
+      i.fas.fa-user
+      input.form-input#school-input(type="text" autocomplete="off" autofocus required placeholder="Admin Kullanıcı Adı" name="adminName")
+    .form-line
+      i.fas.fa-key
+      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Admin Kullancı Şifresi" name="adminPassword")
+    button.form-send-button Başvur

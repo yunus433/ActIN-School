@@ -1,0 +1,54 @@
+.all-content {
+  padding-top: 3%;
+}
+.all-content-inner {
+  padding-left: 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-content-header {
+  display: flex;
+}
+
+.all-content-header-left {
+  flex: 1;
+}
+.school-logo-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 100%;
+  font-weight: 300;
+  color: rgb(64, 64, 64);
+  margin-bottom: 15px;
+}
+.school-logo-wrapper img {
+  max-height: 90%;
+  max-width: 100%;
+  border-radius: 100%;
+  border: 2px solid rgb(236, 236, 236);
+}
+
+
+.all-content-header-right {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+.school-name {
+  color: rgb(64, 64, 64);
+  font-size: 175%;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.school-info {
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+  font-weight: 400;
+  margin-bottom: 5px;
+}

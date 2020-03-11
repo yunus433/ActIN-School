@@ -15,8 +15,13 @@ html(lang="tr")
         script(src=`/socket.io/socket.io.js`)
       if includes.external.indexOf('css') > -1 
         link(rel="stylesheet", href=`/css/${page}.css`)
-    script(src="/js/addEventListener.js")
-    link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,400,500,600,700,800,900" rel="stylesheet")
-    link(rel="stylesheet", href=`/css/general.css`)
+      script(src="/js/addEventListener.js")
+      link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,200,300,400,500,600,700,800,900" rel="stylesheet")
+      if includes.external.indexOf('admin') > -1
+        link(rel="stylesheet", href="/css/admin/general.css")
+      else if includes.external.indexOf('console') > -1
+        link(rel="stylesheet", href="/css/console.css")
+      else
+        link(rel="stylesheet", href="/css/general.css")
   body
     block content

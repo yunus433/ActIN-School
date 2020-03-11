@@ -1,0 +1,30 @@
+.schools-wrapper {
+  padding: 4%;
+  padding-bottom: 0%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+}
+
+.each-school {
+  border: 2px solid rgb(236, 236, 236);
+  padding: 2%;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.each-school-item {
+  color: rgb(64, 64, 64);
+  font-size: 125%;
+  margin-bottom: 10px;
+}
+.each-school-buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accept-button {
+  margin-left: 10px;;
+}

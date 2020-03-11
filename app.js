@@ -26,6 +26,8 @@ const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/actinscho
 // require local route controllers
 const indexRouteController = require('./routes/indexRoute');
 const authRouteController = require('./routes/authRoute');
+const adminRouteController = require('./routes/adminRoute');
+const schoolRouteController = require('./routes/schoolRoute');
 
 // config dotenv files
 dotenv.config({ path: path.join(__dirname, ".env") });
@@ -91,6 +93,8 @@ app.use(helmet());
 // add route controllers
 app.use('/', indexRouteController);
 app.use('/auth', authRouteController);
+app.use('/admin', adminRouteController);
+app.use('/school', schoolRouteController);
 
 // listen for socket.io connection
 // io.on('connection', (socket) => {

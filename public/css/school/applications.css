@@ -1,0 +1,47 @@
+.all-content {
+  padding-top: 3%;
+}
+.all-content-inner {
+  padding: 0% 4%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: rgb(64, 64, 64);
+  font-size: 175%;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.applications-wrapper {
+  margin-top: 10px;
+  height: 80vh;
+  width: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.student-wrapper {
+  background-color: white;
+  margin-top: 15px;
+  padding: 25px;
+  border: 2px solid rgb(236, 236, 236);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.info-title {
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  font-weight: 600;
+}
+.info-content {
+  font-size: 100%;
+  color: rgb(64, 64, 64);
+  font-weight: 300;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}

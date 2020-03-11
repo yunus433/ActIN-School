@@ -1,6 +1,6 @@
-const School = require('../../../models/school/School');
+const School = require('../../../../models/school/School');
 
-const sendMail = require('../../../utils/sendMail');
+const sendMail = require('../../../../utils/sendMail');
 
 module.exports = (req, res) => {
   if (!req.body || !req.body.name || !req.body.email || !req.body.adminName || !req.body.adminPassword) {
@@ -11,6 +11,7 @@ module.exports = (req, res) => {
   const newSchoolData = {
     name: req.body.name,
     email: req.body.email,
+    phone: req.body.phone,
     adminName: req.body.adminName,
     adminPassword: req.body.adminPassword
   }
@@ -29,9 +30,9 @@ module.exports = (req, res) => {
       email: school.email,
       name: school.name
     }, 'schoolRegister', () => {
-      req.session.notVerifiedSchool = school;
+      req.session.school = school;
 
-      return res.redirect('/auth/verify');
+      return res.redirect('/auth/school/verify');
     });
   });
 }

@@ -1,0 +1,8 @@
+extends ./../partials/head
+block content
+  form.all-content-login-wrapper(action="/admin/login" method="POST")
+    span.all-content-header Admin Girişi
+    .form-line
+      i.fas.fa-key
+      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Admin Şifresi" name="password")
+    button.form-send-button Giriş yap
