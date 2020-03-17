@@ -3,26 +3,27 @@ block content
   if includes.external.indexOf('school') > -1
     .all-wrapper
       .all-header
-        a.main-logo(href="/")
-          span Act'IN
-          span School
+        .header-user-wrapper
+          .header-logo-wrapper
+            img.header-logo(src="https://i.pinimg.com/originals/84/3f/01/843f013309510ec07fe82cfcd81ee1f7.jpg")
+          span.header-user-name= school.name
+          span.header-user-explanation Yönetim Paneli
         .header-bar
-          .header-bar-title
-            span Yönetim
-          a(href="/school/dashboard").header-bar-each
+          a(href="/school/dashboard").header-bar-each.header-bar-each-selected
             i.fas.fa-home
             span Okul Sayfası
-          a(href="/school/dashboard").header-bar-each
-            i.fas.fa-cog
-            span Ayarlar
-          .header-bar-title
-            span Kayıt
-          a(href="/school/students").header-bar-each
-            i.fas.fa-user
-            span Öğrenci Listesi
           a(href="/school/applications").header-bar-each
             i.fas.fa-inbox
             span Başvurular
+          a(href="/school/students").header-bar-each
+            i.fas.fa-user
+            span Kayıtlı Öğrenciler
+          a(href="/school/clubs").header-bar-each
+            i.fas.fa-clipboard-list
+            span Kulüp Listesi
+          a(href="/school/dashboard").header-bar-each
+            i.fas.fa-cog
+            span Ayarlar
         .copyright-wrapper
           span Copyright 2020 - Yunus Gürlek 
       .all-content

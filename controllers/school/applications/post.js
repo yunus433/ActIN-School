@@ -16,7 +16,7 @@ module.exports = (req, res) => {
 
         School.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.school._id), {
           $pull: {
-            "users": {
+            "applications": {
               "_id": req.query.id
             }
           },
@@ -44,7 +44,7 @@ module.exports = (req, res) => {
 
         School.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.school._id), {
           $pull: {
-            "users": {
+            "applications": {
               "_id": req.query.id
             }
           }
