@@ -12,7 +12,8 @@ module.exports = (req, res) => {
       includes: {
         external: ["css", "console", "school", "js", "fontawesome"]
       },
-      school
+      school,
+      "active": "users"
     });
   });
 }

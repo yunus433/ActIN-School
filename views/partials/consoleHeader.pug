@@ -5,23 +5,23 @@ block content
       .all-header
         .header-user-wrapper
           .header-logo-wrapper
-            img.header-logo(src="https://i.pinimg.com/originals/84/3f/01/843f013309510ec07fe82cfcd81ee1f7.jpg")
+            img.header-logo(src=school.profilePhoto)
           span.header-user-name= school.name
-          span.header-user-explanation Yönetim Paneli
+          span.header-user-explanation Yönetici Paneli
         .header-bar
-          a(href="/school/dashboard").header-bar-each.header-bar-each-selected
+          a(href="/school/dashboard" class = (active == "dashboard") ? "header-bar-each-selected" : "").header-bar-each
             i.fas.fa-home
-            span Okul Sayfası
-          a(href="/school/applications").header-bar-each
+            span Ana Sayfa
+          a(href="/school/applications" class = (active == "applications") ? "header-bar-each-selected" : "").header-bar-each
             i.fas.fa-inbox
             span Başvurular
-          a(href="/school/students").header-bar-each
+          a(href="/school/students" class = (active == "users") ? "header-bar-each-selected" : "").header-bar-each
             i.fas.fa-user
             span Kayıtlı Öğrenciler
-          a(href="/school/clubs").header-bar-each
+          a(href="/school/clubs" class = (active == "clubs") ? "header-bar-each-selected" : "").header-bar-each
             i.fas.fa-clipboard-list
             span Kulüp Listesi
-          a(href="/school/dashboard").header-bar-each
+          a(href="/school/dashboard" class = (active == "settings") ? "header-bar-each-selected" : "").header-bar-each
             i.fas.fa-cog
             span Ayarlar
         .copyright-wrapper

@@ -1,12 +1,4 @@
 extends ./../partials/header
 block main
-  .all-content-inner-wrapper
-    .all-content-first-row
-      span.first-row-header Okul klüpleri için Türkiye'nin ilk profesyonel yönetim platformu
-      span.first-row-text Herkesin kullanabileceği sade, basit ve profesyonel bir tasarımla...
-      .first-row-image-wrapper
-        img.first-row-image(src="/res/images/main-page-image.png")
-    .all-content-second-row
-    .all-content-third-row
-      span.all-content-header Biz Kimiz?
-      span.all-content-text Act'IN School, özellikle lise ve üniversite kulüpleri için kurulmuş bir kulüp yönetim ve paylaşım sayfasıdır. Öğrenci kulüpleri içindeki iletişim zorluğunu ortadan kaldırmayı hedeflemektedir. 
+  a.register-button(href="/auth/register")
+    span Hemen Başla

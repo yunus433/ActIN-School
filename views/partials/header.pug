@@ -2,19 +2,16 @@ extends ./../partials/head
 block content
   .all-wrapper
     .all-header
-      a.main-logo(href="/")
-        span Act'IN
-        span School
-      .header-bar
-        a(href="/").header-bar-each 
-          span Hakkımızda
-        a(href="/auth/school/login").header-bar-each 
-          span Yönetim Girişi
-        a(href="/auth/school/register").header-bar-each
-          span Yeni Okul Başvurusu
-      .login-wrapper
-        a.login-button(href="/auth/login") Giriş Yap
-        span ya da
-        a.register-button(href="/auth/register") Üye Ol
+      a.header-bar-each(href="/aboutus")
+        span Hakkımızda
+      a.header-bar-each(href="/contact")
+        span İletişim
+      a.header-bar-each(href="/auth/school/register")
+        span Başvur
+      a.header-bar-each(href="/auth/school/login")
+        span Admin Girişi
+      a.header-bar-each(href="/auth/login")
+        span Giriş
+    
     .all-content
       block main

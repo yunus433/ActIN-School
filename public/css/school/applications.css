@@ -1,47 +1,76 @@
 .all-content {
-  padding-top: 3%;
-}
-.all-content-inner {
-  padding: 0% 4%;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.title {
-  color: rgb(64, 64, 64);
+.content-title {
+  color: rgb(54, 69, 79);
   font-size: 175%;
   font-weight: 600;
   margin-bottom: 5px;
+  margin-left: 20px;
+}
+.content-info {
+  color: rgb(54, 69, 79);
+  font-size: 100%;
+  font-weight: 300;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .applications-wrapper {
-  margin-top: 10px;
-  height: 80vh;
-  width: 100%;
+  padding: 0px 20px;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .student-wrapper {
-  background-color: white;
-  margin-top: 15px;
+  background-color: rgb(250, 250, 255);
+  margin-bottom: 15px;
   padding: 25px;
   border: 2px solid rgb(236, 236, 236);
   display: flex;
   flex-direction: column;
   border-radius: 15px;
+  width: 100%;
 }
 .info-title {
-  font-size: 100%;
-  color: rgb(64, 64, 64);
+  font-size: 115%;
   font-weight: 600;
+  color: rgb(54, 69, 79);
+  margin-right: 5px;
 }
 .info-content {
-  font-size: 100%;
-  color: rgb(64, 64, 64);
+  font-size: 115%;
   font-weight: 300;
+  color: rgb(54, 69, 79);
+  margin-right: 5px;
 }
 
 .buttons-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+.reject-button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  margin-right: 10px;
+  background-color: rgb(83, 104, 114);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.accept-button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 125%;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(119, 136, 153);
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -1,54 +1,115 @@
 .all-content {
-  padding-top: 3%;
 }
-.all-content-inner {
-  padding-left: 4%;
+
+.image-wrapper {
+  height: 37.25vh;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 80vw;
+}
+.all-content-image {
+  width: 100%;
+  margin-bottom: 200px;
+}
+
+.all-content-inner-wrapper {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  width: 80vw;
+  height: 100vh;
+  margin-top: 0px;
+}
+
+.empty-wrapper {
+  height: 37.25vh;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(241, 242, 238, 0), rgba(241, 242, 238, 0.2));
+}
+.color-wrapper {
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(241, 242, 238, 0.2), rgba(241, 242, 238, 1));
 }
 
 .all-content-header {
   display: flex;
+  flex-direction: column;
+  padding-left: 20px;
 }
 
-.all-content-header-left {
-  flex: 1;
-}
 .school-logo-wrapper {
-  height: 100%;
-  width: 100%;
+  height: 220px;
+  width: 220px;
+  margin-top: -130px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
-  font-size: 100%;
-  font-weight: 300;
-  color: rgb(64, 64, 64);
   margin-bottom: 15px;
+  border-radius: 100%;
+  margin-left: 10px;
 }
 .school-logo-wrapper img {
-  max-height: 90%;
-  max-width: 100%;
-  border-radius: 100%;
-  border: 2px solid rgb(236, 236, 236);
-}
-
-
-.all-content-header-right {
-  flex: 6;
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
+  max-height: 100%;
 }
 .school-name {
-  color: rgb(64, 64, 64);
+  color: rgb(87, 77, 101);
   font-size: 175%;
   font-weight: 600;
   margin-bottom: 5px;
 }
-.school-info {
-  color: rgb(64, 64, 64);
-  font-size: 125%;
-  font-weight: 400;
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  margin-top: 40px;
+  width: 100%;
+}
+.each-info {
+  display: flex;
+  align-items: center;
   margin-bottom: 5px;
 }
+.each-info-title {
+  font-size: 125%;
+  font-weight: 600;
+  color: rgb(87, 77, 101);
+  margin-right: 5px;
+}
+.each-info-content {
+  font-size: 125%;
+  font-weight: 300;
+  color: rgb(87, 77, 101);
+  margin-right: 5px;
+}
+
+.explanation-wrapper {
+  width: 80%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.explanation {
+  color: rgb(87, 77, 101);
+  line-height: 130%;
+  font-size: 125%;
+  text-align: center;
+  font-weight: 300;
+}
+.explanation-signature {
+  align-self: flex-end;
+  margin-top: 10px;
+  font-size: 125%;
+  font-weight: 600;
+  color: rgb(87, 77, 101);
+}
+
+
+/*	#002e63 */

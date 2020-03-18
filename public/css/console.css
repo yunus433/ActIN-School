@@ -37,7 +37,7 @@ body {
 
 .all-header {
   flex: 1;
-  background-color: rgb(119, 136, 153);
+  background-color: #BFB7B6;
   display: flex;
   flex-direction: column;
 }
@@ -50,25 +50,25 @@ body {
   flex-direction: column;
 }
 .header-logo-wrapper {
-  width: 50%;
+  width: 100px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid white;
+  overflow: hidden;
 }
 .header-logo {
-  width: 100%;
-  border-radius: 50%;
+  height: 100%;
 }
 .header-user-name {
-  color: white;
+  color: rgb(67, 80, 88);
   font-size: 125%;
   font-weight: 600;
   margin-top: 20px;
 }
 .header-user-explanation {
-  color: white;
+  color: #435058;
   font-size: 100%;
   font-weight: 400;
 }
@@ -80,7 +80,7 @@ body {
 .header-bar-each {
   width: auto;
   text-decoration: none;
-  color: white;
+  color: rgb(67, 80, 88);
   font-size: 100%;
   font-weight: 700;
   padding: 20px 0%;
@@ -95,22 +95,24 @@ body {
   margin-left: 10px;
 }
 .header-bar-each-selected {
-  background-color: #536872;
+  background-color: rgb(106, 93, 123);
+  color: rgb(241, 242, 238);
 }
 .header-bar-each:hover {
-  background-color: #536872;
+  background-color: rgb(106, 93, 123);
+  color: rgb(241, 242, 238);
 }
 
 .copyright-wrapper {
   margin-top: auto;
   margin-bottom: 20px;
   margin-left: 20px;
-  color: white;
+  color: rgb(67, 80, 88);
   font-size: 100%;
   font-weight: 600;
 }
 
 .all-content {
   flex: 4;
-  background-color: white;
+  background-color: rgb(241, 242, 238);
 }

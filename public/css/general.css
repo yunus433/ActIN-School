@@ -28,81 +28,43 @@ body {
 .all-wrapper {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .display-none {
   display: none;
 }
 
 .all-header {
-  flex: 1;
-  background-color: white;
-  border-bottom: 2px solid rgb(236, 236, 236);
+  height: 10vh;
+  width: 100vw;
+  background-color: rgb(248, 248, 248);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  padding: 0% 4%;
-}
-.main-logo {
-  font-size: 200%;
-  color: rgb(64, 64, 64);
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-}
-.main-logo span {
-  height: 30px;
+  padding: 0% 40px;
+  position: absolute;
+  z-index: 2;
 }
 
-.header-bar {
-  display: flex;
-  align-items: center;
-  margin-left: 4%;
-}
 .header-bar-each {
-  margin-right: 25px;
-  width: auto;
   text-decoration: none;
-  color: rgb(64, 64, 64);
-  font-size: 140%;
-  font-weight: 500;
-}
-.header-bar-each:hover {
-  text-decoration: underline;
-}
-
-.login-wrapper {
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.login-wrapper span {
-  font-size: 100%;
-  margin: 5px 0px;
-  color: rgb(64, 64, 64);
+  margin-right: 20px;
+  color: #276FBF;
+  font-size: 125%;
   font-weight: 600;
 }
-.login-button {
-  font-size: 125%;
-  color: rgb(64, 64, 64);
-  font-weight: 700;
-  text-decoration: none;
-}
-.register-button {
-  font-size: 115%;
-  color: rgb(64, 64, 64);
-  font-weight: 700;
-  text-decoration: none;
-}
-.login-button:hover, .register-button:hover {
-  text-decoration: underline;
+.header-bar-each:hover {
+  color: #183059;
 }
 
 .all-content {
-  flex: 5;
-  /* background-color: rgb(140, 188, 208); */
+  background-color: rgb(246, 244, 243);
+  width: 100vw;
+  height: 100vh;
 }
+
+/* 
+background color: rgb(250, 253, 246)
+header color: rgb(94, 80, 63)
+
+*/

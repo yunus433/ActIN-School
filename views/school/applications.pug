@@ -1,24 +1,24 @@
 extends ./../partials/consoleHeader
 block main
-  .all-content-inner
-    span.title Öğrenci Başvuruları
-    .applications-wrapper
-      each student in school.applications
-        .student-wrapper
-          .each-student-info
-            span.info-title Öğrenci İsmi: 
-            span.info-content= student.name
-          .each-student-info
-            span.info-title Okul Numarası: 
-            span.info-content= student.schoolNumber
-          .each-student-info
-            span.info-title Öğrenci E-Posta Adresi: 
-            span.info-content= student.email
-          .each-student-info
-            span.info-title Oluşturulma Zamanı: 
-            span.info-content= student.createdAt
-          .buttons-wrapper
-            form.reject-button-wrapper(action=`/school/applications?id=${student._id}&response=rejected`)
-              button.reject-button Reddet
-            form.accept-button-wrapper(action=`/school/applications?id=${student._id}&response=accepted`)
-              button.accept-button Onayla
+  span.content-title Öğrenci Başvuruları (#{school.applications.length} yeni başvuru)
+  span.content-info Bu sayfadan okulunuz adına başvuran öğrenci kayıtlarını görebilir, bu kayıtları onaylayabilir veya reddebilirsiniz.
+  .applications-wrapper
+    each student in school.applications
+      .student-wrapper
+        .each-student-info
+          span.info-title Öğrenci İsmi: 
+          span.info-content= student.name
+        .each-student-info
+          span.info-title Okul Numarası: 
+          span.info-content= student.schoolNumber
+        .each-student-info
+          span.info-title Öğrenci E-Posta Adresi: 
+          span.info-content= student.email
+        .each-student-info
+          span.info-title Oluşturulma Zamanı: 
+          span.info-content= student.createdAt
+        .buttons-wrapper
+          form.reject-button-wrapper(action=`/school/applications?id=${student._id}&response=rejected` method="POST")
+            button.reject-button Reddet
+          form.accept-button-wrapper(action=`/school/applications?id=${student._id}&response=accepted` method="POST")
+            button.accept-button Onayla

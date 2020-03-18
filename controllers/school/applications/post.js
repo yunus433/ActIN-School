@@ -17,7 +17,7 @@ module.exports = (req, res) => {
         School.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.school._id), {
           $pull: {
             "applications": {
-              "_id": req.query.id
+              "_id": req.session.school._id
             }
           },
           $push: {

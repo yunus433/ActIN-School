@@ -27,7 +27,7 @@ module.exports = (req, res, next) => {
 
       School.findByIdAndUpdate(mongoose.Types.ObjectId(req.body.school), {$push: {
         "applications": {
-          _id: user._id,
+          _id: user._id.toString(),
           email: req.body.email,
           name: req.body.name,
           schoolNumber: req.body.schoolNumber,
