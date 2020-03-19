@@ -15,11 +15,31 @@
   color: rgb(67, 80, 88);
   font-size: 125%;
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-left: 20px;
 }
 
-.no-application-text {
+.students-search-wrapper {
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.students-search-wrapper i {
+  color: rgba(67, 80, 88, 0.5);
+  font-size: 100%;
+  margin-right: 5px;
+}
+.search-input {
+  font-size: 100%;
+  color: rgb(67, 80, 88);
+  border: none;
+  background-color: transparent;
+  flex: 1;
+  outline: none;
+}
+
+.no-student-text {
   color: rgb(67, 80, 88);
   font-weight: 600;
   width: 100%;
@@ -42,7 +62,7 @@
   border-color: rgb(106, 93, 123) !important;
 }
 
-.applications-header {
+.students-header {
   display: flex;
   margin-bottom: 10px;
   margin-left: 20px;
@@ -53,7 +73,7 @@
   border-radius: 10px;
   border: 2px solid rgb(106, 93, 123);
 }
-.applications-header-select-button {
+.students-header-select-button {
   height: 25px;
   width: 25px;
   border: 2px solid rgb(106, 93, 123);
@@ -61,7 +81,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
-.applications-header-select-button-empty {
+.students-header-select-button-empty {
   height: 25px;
   width: 25px;
   border: 2px solid rgb(106, 93, 123);
@@ -69,7 +89,7 @@
   cursor: not-allowed;
   border-radius: 5px;
 }
-.applications-header-number {
+.students-header-number {
   padding-right: 20px;
   border-right: 2px solid rgb(106, 93, 123);
   color: rgb(67, 80, 88);
@@ -82,7 +102,7 @@
   flex: 1;
   text-align: center;
 }
-.applications-header-name {
+.students-header-name {
   padding: 0px 20px;
   border-right: 2px solid rgb(106, 93, 123);
   color: rgb(67, 80, 88);
@@ -95,7 +115,7 @@
   flex: 2;
   text-align: center;
 }
-.applications-header-email {
+.students-header-email {
   padding: 0px 20px;
   border-right: 2px solid rgb(106, 93, 123);
   color: rgb(67, 80, 88);
@@ -108,7 +128,7 @@
   flex: 2;
   text-align: center;
 }
-.applications-header-createdat {
+.students-header-createdat {
   padding: 0px 20px;
   color: rgb(67, 80, 88);
   font-weight: 600;
@@ -120,7 +140,7 @@
   flex: 2;
   text-align: center;
 }
-.applications-header-buttons-wrapper {
+.students-header-buttons-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -136,9 +156,9 @@
   color: rgb(67, 80, 88);
   font-weight: 600;
 }
-.accept-button {
-  color: green;
-  font-size: 125%;
+.delete-button {
+  color: rgba(106, 93, 123, 0.5);
+  font-size: 100%;
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -150,28 +170,11 @@
   outline: none;
   background-color: transparent;
 }
-.accept-button:hover {
-  background-color: rgba(106, 93, 123, 0.3);
-}
-.reject-button {
-  color: red;
-  font-size: 125%;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-.reject-button:hover {
+.delete-button:hover {
   background-color: rgba(106, 93, 123, 0.3);
 }
 
-.applications-wrapper {
+.students-wrapper {
   padding: 0px 20px;
   margin-bottom: 20px;
   overflow: scroll;

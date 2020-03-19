@@ -3,59 +3,59 @@ const mongoose = require('mongoose');
 const User = require('../../../models/user/User');
 const School = require('../../../models/school/School');
 
-module.exports = (req, res) => {
-  if (req.query && req.query.id && req.query.response) {
-    if (req.query.response == 'accepted') {
-      User.findOneAndUpdate({
-        "_id": mongoose.Types.ObjectId(req.query.id),
-        "school": req.session.school._id
-      }, {$set: {
-        verified: true
-      }}, {}, (err, user) => {
-        if (err || !user) return res.redirect('/');
-
-        School.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.school._id), {
-          $pull: {
-            "applications": {
-              "_id": req.session.school._id
-            }
-          },
-          $push: {
-            "users": {
-              "_id": user._id,
-              "name": user.name,
-              "email": user.email,
-              "createdAt": user.createdAt,
-              "profilePhoto": user.profilePhoto
-            }
+const updateStudent = (id, response, school) => {
+  if (response == 'accept') {
+    User.findOneAndUpdate({
+      "_id": mongoose.Types.ObjectId(id),
+      "school": school._id
+    }, {$set: {
+      verified: true
+    }}, {}, (err, user) => {
+      School.findByIdAndUpdate(mongoose.Types.ObjectId(school._id), {
+        $pull: {
+          "applications": {
+            "_id": id
           }
-        }, {upsert: true}, (err, school) => {
-          if (err || !school) return res.redirect('/');
-
-          return res.redirect('/school/applications');
-        });
-      });
-    } else {
-      User.findOneAndDelete({
-        "_id": mongoose.Types.ObjectId(req.query.id),
-        "school": req.session.school._id
-      }, (err, user) => {
-        if (err || !user) return res.redirect('/');
-
-        School.findByIdAndUpdate(mongoose.Types.ObjectId(req.session.school._id), {
-          $pull: {
-            "applications": {
-              "_id": req.query.id
-            }
+        },
+        $push: {
+          "users": {
+            "_id": id,
+            "name": user.name,
+            "schoolNumber": user.schoolNumber,
+            "email": user.email,
+            "createdAt": user.createdAt,
+            "profilePhoto": user.profilePhoto
           }
-        }, {upsert: true}, (err, school) => {
-          if (err || !school) return res.redirect('/');
-
-          return res.redirect('/school/applications');
-        });
+        }
+      }, {}, (err, school) => {
+        return;
       });
-    }
+    });
   } else {
-    return res.redirect('/');
+    User.findOneAndDelete({
+      "_id": mongoose.Types.ObjectId(id),
+      "school": school._id
+    }, (err, user) => {
+      School.findByIdAndUpdate(mongoose.Types.ObjectId(school._id), {
+        $pull: {
+          "applications": {
+            "_id": id
+          }
+        }
+      }, {upsert: true}, (err, school) => {
+        return;
+      });
+    });
+  }
+}
+
+module.exports = (req, res) => {
+  if (req.body && req.body.students && req.body.response) {
+    req.body.students.forEach(student => {
+      updateStudent(student, req.body.response, req.session.school);
+    });
+    return res.sendStatus(200);
+  } else {
+    return res.sendStatus(500);
   }
 }

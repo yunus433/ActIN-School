@@ -1,0 +1,35 @@
+extends ./../partials/consoleHeader
+block main
+  span.display-none#students= school.users
+  span.content-title Öğrenciler (#{school.users.length} kayıtlı öğrenci)
+  span.content-info Bu sayfadan okulunuz adına kayıtlı öğrencileri görebilir, öğrenci profillerini gözlemleyebilir ve gerekirse öğrenci hesaplarını silebilirsiniz.
+  label.students-search-wrapper
+    i.fas.fa-search
+    input.search-input(type="text" placeholder="Öğrenci ismi ile arayın")
+  .students-header
+    if school.users.length
+      .students-header-select-button
+        i.fas.fa-check.select-student-button-check
+    else
+      .students-header-select-button-empty
+    span.students-header-number Okul No
+    span.students-header-name Ad Soyad
+    span.students-header-email E-Posta Adresi
+    span.students-header-createdat Oluşturulma Tarihi
+    .students-header-buttons-wrapper
+      .buttons-inner-wrapper
+        button.fas.fa-trash.delete-button.delete-button-all
+      span.selected-number 0 seçildi
+  .students-wrapper
+    if school.users.length == 0
+      span.no-student-text Şuan kayıtlı hiçbir öğrenci bulunmuyor
+    each student in school.users
+      .each-student-wrapper(id=student._id)
+        .select-student-button
+          i.fas.fa-check.select-student-button-check
+        span.student-number= student.schoolNumber
+        span.student-name Yunus Gürlek
+        span.student-email= student.email
+        span.student-createdat= student.createdAt
+        .buttons-wrapper
+          button.fas.fa-trash.delete-button

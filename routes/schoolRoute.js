@@ -6,6 +6,7 @@ const isVerifiedSchool = require('../middleware/isVerifiedSchool');
 
 const dashboardGetController = require('../controllers/school/dashboard/get');
 const applicationsGetController = require('../controllers/school/applications/get');
+const studentsGetController = require('../controllers/school/students/get');
 
 const applicationsPostController = require('../controllers/school/applications/post');
 
@@ -20,6 +21,12 @@ router.get(
   isLoggedInSchool,
   isVerifiedSchool,
   applicationsGetController
+);
+router.get(
+  '/students',
+  isLoggedInSchool,
+  isVerifiedSchool,
+  studentsGetController
 );
 
 router.post(

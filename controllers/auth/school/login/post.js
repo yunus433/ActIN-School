@@ -1,7 +1,6 @@
 const School = require('../../../../models/school/School')
 
 module.exports = (req, res) => {
-  console.log("here");
   if (!req.body || !req.body.adminName || !req.body.password) {
     req.session.error = "missing information";
     return res.redirect('/auth/school/login');

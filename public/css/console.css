@@ -37,7 +37,7 @@ body {
 
 .all-header {
   flex: 1;
-  background-color: #BFB7B6;
+  background-color: rgb(191, 183, 182);
   display: flex;
   flex-direction: column;
 }
@@ -68,7 +68,7 @@ body {
   margin-top: 20px;
 }
 .header-user-explanation {
-  color: #435058;
+  color: rgb(67, 80, 88);
   font-size: 100%;
   font-weight: 400;
 }

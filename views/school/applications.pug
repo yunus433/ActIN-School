@@ -2,23 +2,32 @@ extends ./../partials/consoleHeader
 block main
   span.content-title Öğrenci Başvuruları (#{school.applications.length} yeni başvuru)
   span.content-info Bu sayfadan okulunuz adına başvuran öğrenci kayıtlarını görebilir, bu kayıtları onaylayabilir veya reddebilirsiniz.
+  .applications-header
+    if school.applications.length
+      .applications-header-select-button
+        i.fas.fa-check.select-student-button-check
+    else
+      .applications-header-select-button-empty
+    span.applications-header-number Okul No
+    span.applications-header-name Ad Soyad
+    span.applications-header-email E-Posta Adresi
+    span.applications-header-createdat Oluşturulma Tarihi
+    .applications-header-buttons-wrapper
+      .buttons-inner-wrapper
+        button.fas.fa-check.accept-button.accept-button-all
+        button.fas.fa-times.reject-button.reject-button-all
+      span.selected-number 0 seçildi
   .applications-wrapper
+    if school.applications.length == 0
+      span.no-application-text Şuan hiçbir başvuru bulunmuyor
     each student in school.applications
-      .student-wrapper
-        .each-student-info
-          span.info-title Öğrenci İsmi: 
-          span.info-content= student.name
-        .each-student-info
-          span.info-title Okul Numarası: 
-          span.info-content= student.schoolNumber
-        .each-student-info
-          span.info-title Öğrenci E-Posta Adresi: 
-          span.info-content= student.email
-        .each-student-info
-          span.info-title Oluşturulma Zamanı: 
-          span.info-content= student.createdAt
+      .each-student-wrapper(id=student._id)
+        .select-student-button
+          i.fas.fa-check.select-student-button-check
+        span.student-number= student.schoolNumber
+        span.student-name Yunus Gürlek
+        span.student-email= student.email
+        span.student-createdat= student.createdAt
         .buttons-wrapper
-          form.reject-button-wrapper(action=`/school/applications?id=${student._id}&response=rejected` method="POST")
-            button.reject-button Reddet
-          form.accept-button-wrapper(action=`/school/applications?id=${student._id}&response=accepted` method="POST")
-            button.accept-button Onayla
+          button.fas.fa-check.accept-button
+          button.fas.fa-times.reject-button
