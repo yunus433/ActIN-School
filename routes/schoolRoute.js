@@ -9,6 +9,7 @@ const applicationsGetController = require('../controllers/school/applications/ge
 const studentsGetController = require('../controllers/school/students/get');
 
 const applicationsPostController = require('../controllers/school/applications/post');
+const studentsPostController = require('../controllers/school/students/post');
 
 router.get(
   '/dashboard',
@@ -34,6 +35,12 @@ router.post(
   isLoggedInSchool,
   isVerifiedSchool,
   applicationsPostController
+);
+router.post(
+  '/students',
+  isLoggedInSchool,
+  isVerifiedSchool,
+  studentsPostController
 );
 
 module.exports = router;

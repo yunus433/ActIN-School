@@ -8,9 +8,9 @@ const selectStudent = (button, id) => {
     button.childNodes[0].style.display = 'none';
     document.querySelector('.selected-number').innerHTML = `${selectedStudents.length} seçildi`;
     if (selectedStudents.length == 0) {
-      document.querySelector('.applications-header-buttons-wrapper').style.visibility = 'hidden';
-      document.querySelector('.applications-header-select-button.selected-button').childNodes[0].style.display = 'none';
-      document.querySelector('.applications-header-select-button.selected-button').classList.remove('selected-button');
+      document.querySelector('.students-header-buttons-wrapper').style.visibility = 'hidden';
+      document.querySelector('.students-header-select-button.selected-button').childNodes[0].style.display = 'none';
+      document.querySelector('.students-header-select-button.selected-button').classList.remove('selected-button');
       const buttonWrappers = document.querySelectorAll('.buttons-wrapper');
       buttonWrappers.forEach(wrapper => {
         wrapper.style.visibility = 'initial';
@@ -21,10 +21,10 @@ const selectStudent = (button, id) => {
     button.parentNode.classList.add('selected-student')
     selectedStudents.push(id);
     button.childNodes[0].style.display = 'block';
-    document.querySelector('.applications-header-buttons-wrapper').style.visibility = 'initial';
+    document.querySelector('.students-header-buttons-wrapper').style.visibility = 'initial';
     document.querySelector('.selected-number').innerHTML = `${selectedStudents.length} seçildi`;
-    document.querySelector('.applications-header-select-button').childNodes[0].style.display = 'block';
-    document.querySelector('.applications-header-select-button').classList.add('selected-button');
+    document.querySelector('.students-header-select-button').childNodes[0].style.display = 'block';
+    document.querySelector('.students-header-select-button').classList.add('selected-button');
     const buttonWrappers = document.querySelectorAll('.buttons-wrapper');
     buttonWrappers.forEach(wrapper => {
       wrapper.style.visibility = 'hidden';
@@ -43,7 +43,7 @@ const selectAll = (button) => {
 
     button.classList.remove('selected-button');
     button.childNodes[0].style.display = 'none';
-    document.querySelector('.applications-header-buttons-wrapper').style.visibility = 'hidden';
+    document.querySelector('.students-header-buttons-wrapper').style.visibility = 'hidden';
     const buttonWrappers = document.querySelectorAll('.buttons-wrapper');
       buttonWrappers.forEach(wrapper => {
         wrapper.style.visibility = 'initial';
@@ -56,7 +56,7 @@ const selectAll = (button) => {
     });
 
     button.classList.add('selected-button');
-    document.querySelector('.applications-header-buttons-wrapper').style.visibility = 'initial';
+    document.querySelector('.students-header-buttons-wrapper').style.visibility = 'initial';
     document.querySelector('.selected-number').innerHTML = `${selectedStudents.length} seçildi`;
     const buttonWrappers = document.querySelectorAll('.buttons-wrapper');
     buttonWrappers.forEach(wrapper => {
@@ -85,9 +85,9 @@ window.onload = () => {
       selectStudent(event.target, event.target.parentNode.id);
     else if (event.target.parentNode.classList.contains('select-student-button'))
       selectStudent(event.target.parentNode, event.target.parentNode.parentNode.id);
-    else if (event.target.classList.contains('applications-header-select-button'))
+    else if (event.target.classList.contains('students-header-select-button'))
       selectAll(event.target);
-    else if (event.target.parentNode.classList.contains('applications-header-select-button'))
+    else if (event.target.parentNode.classList.contains('students-header-select-button'))
       selectAll(event.target.parentNode);
 
     if (event.target.classList.contains('delete-button')) {
