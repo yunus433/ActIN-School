@@ -1,9 +1,21 @@
 window.onload = () => {
   const schoolList = JSON.parse(document.getElementById('school-object').innerHTML);
+  const schoolNameList = [];
 
+  schoolList.forEach(school => {
+    schoolNameList.push(school.name);
+  });
+
+  const formWrapper = document.querySelector('.all-content-register-wrapper');
+  const emailInput = document.getElementById('email-input');
+  const nameInput = document.getElementById('name-input');
+  const numberInput = document.getElementById('number-input');
+  const passwordInput = document.getElementById('password-input');
+  const passwordInputTwo = document.getElementById('password-input-two');
   const schoolInput = document.getElementById('school-input');
   const schoolInputId = document.getElementById('school-input-id');
   const schoolValueWrapper = document.querySelector('.school-input-values');
+  const errorText = document.querySelector('.error-text');
 
   document.addEventListener('click', (event) => {
     if (event.target.className == 'input-value-each-span') {
@@ -21,6 +33,7 @@ window.onload = () => {
   schoolInput.onfocus = (event) => {
     schoolValueWrapper.style.display = 'flex';
   };
+
   schoolInput.oninput = (event) => {
     if (schoolInput.value) {
       schoolValueWrapper.innerHTML = "";
@@ -32,6 +45,12 @@ window.onload = () => {
           schoolValueWrapper.appendChild(newSpan);
         }
       });
+
+      const anyA = document.createElement('a');
+      anyA.innerHTML = "Okulunu bulamadın mı?";
+      anyA.href = "/auth/school/register";
+      schoolValueWrapper.appendChild(anyA);
+
     } else {
       schoolValueWrapper.innerHTML = "";
       schoolList.forEach(school => {
@@ -40,25 +59,46 @@ window.onload = () => {
         newSpan.innerHTML = school.name;
         schoolValueWrapper.appendChild(newSpan);
       });
+      const anyA = document.createElement('a');
+      anyA.innerHTML = "Okulunu bulamadın mı?";
+      anyA.href = "/auth/school/register";
+      schoolValueWrapper.appendChild(anyA);
     };
   };
 
-  // const form = document.querySelector('.form-wrapper');
-  // const error = document.querySelector('.each-error-line');
-  // form.onsubmit = (event) => {
-  //   event.preventDefault();
-    
-  //   if (schoolList.indexOf(schoolInput.value) === -1) {
-  //     error.innerHTML = 'Bitte wähle eine Hochschule!';
-  //   }
-  //   else if (document.getElementById('password-input-one').value.length < 6 || document.getElementById('password-input-two').value.length < 6) {
-  //     error.innerHTML = 'Dein Passwort muss mindestens 6-stellig sein!';
-  //   }
-  //   else if (document.getElementById('password-input-one').value != document.getElementById('password-input-two').value) {
-  //     error.innerHTML = 'Bitte bestätige dein Passwort!';
-  //   }
-  //   else {
-  //     form.submit();
-  //   }
-  // }
+  formWrapper.onsubmit = event => {
+    event.preventDefault();
+
+    if (!emailInput.value || !nameInput.value || !schoolInput.value || !numberInput.value || !passwordInput.value || !passwordInputTwo.value) {
+      errorText.classList.remove('error-line-animation-class');
+      setTimeout(() => {
+        errorText.innerHTML = "Lütfen bütün alanları doldurun.";
+        errorText.style.visibility = "initial";
+        errorText.classList.add('error-line-animation-class');
+      }, 100);
+    } else if (passwordInput.value != passwordInputTwo.value) {
+      errorText.classList.remove('error-line-animation-class');
+      setTimeout(() => {
+        errorText.innerHTML = "Lütfen şifrenizi tekrar edin.";
+        errorText.style.visibility = "initial";
+        errorText.classList.add('error-line-animation-class');
+      }, 100);
+    } else if (!schoolNameList.includes(schoolInput.value) || !schoolInputId.value) {
+      errorText.classList.remove('error-line-animation-class');
+      setTimeout(() => {
+        errorText.innerHTML = "Lütfen listeden bir okul seçin.";
+        errorText.style.visibility = "initial";
+        errorText.classList.add('error-line-animation-class');
+      }, 100);
+    } else if (passwordInput.value.length < 6) {
+      errorText.classList.remove('error-line-animation-class');
+      setTimeout(() => {
+        errorText.innerHTML = "Şifreniz en az 6 karakterli olmalı.";
+        errorText.style.visibility = "initial";
+        errorText.classList.add('error-line-animation-class');
+      }, 100);
+    } else {
+      formWrapper.submit();
+    }
+  }
 }

@@ -8,7 +8,8 @@ module.exports = (req, res, next) => {
       includes: {
         external: ['css', 'js', 'fontawesome']
       },
-      err
+      err,
+      backgroundImage: 2
     });
   } else
     res.render('auth/login', {
@@ -16,6 +17,7 @@ module.exports = (req, res, next) => {
       title: 'Giriş',
       includes: {
         external: ['css', 'js', 'fontawesome']
-      }
+      },
+      backgroundImage: 2
     });
 }

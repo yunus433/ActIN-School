@@ -1,8 +1,16 @@
-.all-content {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+.background-shape {
+  background-color: rgba(87, 77, 101, 0.6);
+  width: 125vw;
+  height: 125vw;
+  transform: translate(-50%, -25%);
+  border-radius: 100%;
+  z-index: -1;
+  position: absolute;
+}
+
+.buble-start-animation-class {
+  animation: bubleStartAnimation 1s ease-in-out 0s 1 forwards;
+  -webkit-animation: bubleStartAnimation 1s ease-in-out 0s 1 forwards;
 }
 
 .all-content-login-wrapper {
@@ -65,4 +73,47 @@
 }
 .form-send-button:hover {
   box-shadow: 0px 1px 1px rgba(236, 235, 235, 0.5);
+}
+
+
+@media only screen and (orientation: portrait) {
+  .all-content-register-wrapper {
+    width: 100%;
+  }
+  .background-shape {
+    width: 150vh;
+    height: 150vh;
+  }
+}
+
+@media only screen and (max-width: 1100px) and (orientation: landscape) {
+  .all-content-register-wrapper {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 300px) {
+  .register-button {
+    font-size: 100%;
+  }
+  .form-input {
+    font-size: 100%;
+  }
+}
+
+@keyframes bubleStartAnimation {
+  from {
+    transform: translate(-100%, 50%);
+  }
+  to {
+    transform: translate(-50%, -25%);
+  }
+}
+@-webkit-keyframes bubleStartAnimation {
+  from {
+    transform: translate(-100%, 50%);
+  }
+  to {
+    transform: translate(-50%, -25%);
+  }
 }

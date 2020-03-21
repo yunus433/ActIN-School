@@ -1,8 +1,16 @@
 extends ./../partials/head
 block content
   .background-image-wrapper
-    image.background-image(src="/res/images/landing_page_image.jpg")
-  .background-shape
+    if backgroundImage && backgroundImage == 1
+      image.background-image(src="/res/images/landing_page_image_1.jpg")
+    else if backgroundImage && backgroundImage == 2
+      image.background-image(src="/res/images/landing_page_image_2.jpg")
+    else if backgroundImage && backgroundImage == 3
+      image.background-image(src="/res/images/landing_page_image_3.jpg")
+    else if backgroundImage && backgroundImage == 4
+      image.background-image(src="/res/images/landing_page_image_4.jpg")
+    else
+      image.background-image(src="/res/images/landing_page_image_1.jpg")
   .all-wrapper
     .all-header
       a.header-logo-wrapper(href="/")

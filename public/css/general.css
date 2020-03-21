@@ -35,17 +35,7 @@ body {
   position: absolute;
   width: 100vw;
   min-height: 100vh;
-  transform: rotate(180deg);
   z-index: -2;
-}
-.background-shape {
-  background-color: rgba(87, 77, 101, 0.6);
-  width: 100vw;
-  height: 100vw;
-  transform: translate(-50%, -50%);
-  border-radius: 100%;
-  z-index: -1;
-  position: absolute;
 }
 
 .all-wrapper {
@@ -64,13 +54,15 @@ body {
   display: flex;
   align-items: center;
   padding: 0px 40px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .all-header-responsive {
   display: none;
   padding: 0px 20px;
   align-items: center;
+  justify-content: space-between;
+  z-index: 3;
 }
 
 .header-logo-wrapper {
@@ -93,7 +85,7 @@ body {
   color: rgb(241, 242, 238);
   font-size: 125%;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 15px;
   font-weight: 600;
 }
 .header-bar-each:hover {
@@ -119,6 +111,7 @@ body {
   color: rgb(87, 77, 101);
   font-weight: 600;
   text-decoration: none;
+  border-radius: 5px;
 }
 .header-login-button:hover {
   box-shadow: 0 4px 4px rgba(87, 77, 101, 0.6);
@@ -135,6 +128,7 @@ body {
   color: rgb(241, 242, 238);
   font-weight: 600;
   text-decoration: none;
+  border-radius: 5px;
 }
 .header-register-button:hover {
   box-shadow: 0 4px 4px rgba(87, 77, 101, 0.6);
@@ -142,16 +136,16 @@ body {
 
 .all-content {
   flex: 8;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 40px;
+  z-index: 2;
 }
 
 @media only screen and (orientation: portrait) {
   .background-image {
     height: 100vh;
     width: auto;
-  }
-  .background-shape {
-    width: 200vw;
-    height: 200vw;
   }
   .all-header {
     padding: 0px 20px;
@@ -161,6 +155,12 @@ body {
   }
   .all-header-responsive {
     display: flex;
+  }
+  .header-bar-each {
+    margin-right: 0px;
+  }
+  .all-content {
+    padding: 0 20px;
   }
 }
 
@@ -173,3 +173,4 @@ body {
     width: 80px;
   }
 }
+

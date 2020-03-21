@@ -1,26 +1,32 @@
 extends ./../partials/header
 block main
+  .background-shape.buble-start-animation-class
   span.display-none#school-object= JSON.stringify(schools)
   form.all-content-register-wrapper(action="/auth/register" method="POST")
     span.all-content-header Üye Ol
     .form-line
       i.fas.fa-envelope
-      input.form-input(type="email" autocomplete="off" autofocus required placeholder="E-posta" name="email")
+      input.form-input#email-input(type="email" autocomplete="off" autofocus placeholder="E-posta" name="email")
     .form-line
       i.fas.fa-user
-      input.form-input(type="name" autocomplete="off" autofocus required placeholder="İsim Soyisim" name="name")
+      input.form-input#name-input(type="name" autocomplete="off" autofocus placeholder="İsim Soyisim" name="name")
     .form-line
       i.fas.fa-university
-      input.form-input#school-input(type="text" autocomplete="off" autofocus required placeholder="Okul")
+      input.form-input#school-input(type="text" autocomplete="off" autofocus placeholder="Okul")
       input.display-none#school-input-id(type="text" name="school")
-    .input-value-wrapper
       .school-input-values
         each school in schools
           span.input-value-each-span(id=school._id)= school.name
+        a(href="/auth/school/register") Okulunu bulamadın mı?
     .form-line
       i.fas.fa-hashtag
-      input.form-input(type="number" name="schoolNumber" autocomplete="off" autofocus required placeholder="Okul Numarası")
+      input.form-input#number-input(type="number" name="schoolNumber" autocomplete="off" autofocus placeholder="Okul Numarası")
     .form-line
       i.fas.fa-key
-      input.form-input(type="password" autocomplete="off" autofocus required placeholder="Şifre" name="password")
-    button.form-send-button Üye ol
+      input.form-input#password-input(type="password" autocomplete="off" autofocus placeholder="Şifre" name="password")
+    .form-line
+      i.fas.fa-key
+      input.form-input#password-input-two(type="password" autocomplete="off" autofocus placeholder="Şifre Tekrarı" name="password-repeat")
+    button.form-send-button Başla
+    .error-line
+      span.error-text Error

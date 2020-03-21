@@ -3,7 +3,8 @@ module.exports = (req, res) => {
     page: 'index/index',
     title: 'Ana Sayfa',
     includes: {
-      external: ['js', 'css', 'fontawesome']
-    }
+      external: ['css', 'fontawesome']
+    },
+    backgroundImage: 1
   });
 }

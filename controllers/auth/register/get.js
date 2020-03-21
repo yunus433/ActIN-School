@@ -14,7 +14,8 @@ module.exports = (req, res) => {
           external: ['css', 'js', 'fontawesome']
         },
         err,
-        schools
+        schools,
+        backgroundImage: 2
       });
     } else
       res.render('auth/register', {
@@ -23,7 +24,8 @@ module.exports = (req, res) => {
         includes: {
           external: ['css', 'js', 'fontawesome']
         },
-        schools
+        schools,
+        backgroundImage: 2
       });
   });
 }
