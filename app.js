@@ -63,7 +63,7 @@ app.use(express.static(path.join(__dirname, "public")));
 if (process.env.PORT) app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 // add favicon
-// app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // set body parser
 app.use(bodyParser.urlencoded({ extended: false }));
